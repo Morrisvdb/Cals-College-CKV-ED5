@@ -1,0 +1,24 @@
+{% extends 'artworkBase.html' %}
+{% set has_demo = false %}
+{% block workTitle %}The Creeper{% endblock %}
+{% block artist %}Bob Thomas{% endblock %}
+{% block year %}1971{% endblock %}
+{% block dicipline %}Software Design{% endblock %}
+{% block image %}
+
+    <div class="image-container">
+        <img alt="Image" width="90%" id="image" style="display:inline;" series-id="6" onclick="openFullscreen();">
+    </div>
+
+{% endblock %}
+{% block header %}The Creeper{% endblock %}
+{% block description %}
+    The Creeper (also known as 'The Creeper and Reaper') was a Proof of concept computer virus that was written by Bob Thomas in 1971. It was the first computer virus to be written and was created as an experiment to see if it was possible to create a self-replicating program. The Creeper was written in the programming language B5500 and was designed to infect DEC PDP-10 computers running the TENEX operating system. The virus would display the message "I'm the creeper, catch me if you can!" on the infected computer's terminal and then move to another computer on the network. The Creeper was not malicious and was not designed to cause any harm to the infected computers. It was simply a demonstration of the concept of self-replicating programs. The Creeper was later followed by the first computer worm, the Morris worm, which was written by Robert Tappan Morris in 1988. The Morris worm was the first computer virus to spread over the Internet and caused widespread damage to computer systems around the world. The Creeper and the Morris worm are considered to be the first examples of malware, or malicious software, and are the precursors to the computer viruses, worms, and other types of malware that we see today.
+    <br>
+
+    <h3>Why?</h3>
+    The Creeper is a great artwork for this museum because with the first computers the first malware was created. This is a very important part of the history of computers and the internet. The Creeper is also a great example of how technology can be used for both good and bad purposes. The Creeper was not created with malicious intent, but it paved the way for the creation of more harmful computer viruses and malware. The Creeper is a reminder of the importance of computer security and the need to protect our computer systems from malicious software.
+
+    <script src="{{ url_for('static', filename='javatari.js') }}"></script>
+{% endblock %}
+

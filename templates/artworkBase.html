@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+
+{% block body %}
+
+    <div class="right-center background-square">
+        <p>
+            <strong>Title: </strong>{% block workTitle %}{% endblock %} <br>
+            <strong>Artist: </strong>{% block artist %}{% endblock %} <br>
+            <strong>Year: </strong>{% block year %}{% endblock %} <br>
+            <strong>Dicipline: </strong>{% block dicipline %}{% endblock %}
+        </p>
+    </div>
+    <div class="center half-width">
+        <h1>{% block header %}{% endblock %}</h1>
+        {% block image %}{% endblock %}
+        <button onclick="prevImage();" id="prevButton" class="button">Previous</button>
+        <button onclick="nextImage();" id="nextButton" class="button">Next</button>
+
+        <div>
+            {% if has_demo %}
+                <button id="demoButton" class="button" onclick="loadDemo()">Load Demo</button>
+            {% endif %}
+            <p>
+                {% block description %}{% endblock %}
+            </p> <br>
+
+            
+
+        </div>
+        {% if id != 1 %}
+            <button onclick="prevArtwork()" data-artwork-id="{{ id }}" id="nextArtworkButton"><i class="fa-solid fa-backward"></i> Previous</button>
+        {% endif %}
+        <button class="button" onclick="nextArtwork()" data-artwork-id="{{ id }}" id="nextArtworkButton"><i class="fa-solid fa-forward"></i> Next</button>
+        
+        <!-- {% if id != 10 %} -->
+        <!-- {% endif %} -->
+    </div>
+    <script src="{{ url_for('static', filename='imageSeries.js') }}"></script>
+    <script src="{{ url_for('static', filename='nextArtwork.js') }}"></script>
+
+{% endblock %}

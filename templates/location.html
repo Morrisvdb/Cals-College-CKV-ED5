@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Location{% endblock %}
+
+{% block body %}
+
+
+    <div>
+        
+        <div class="center half-width">
+            <h1>The museums location</h1>
+            <div class="center">
+                <img src="{{ url_for('static', filename='/images/other/museum.png')}}" alt="Image" height="500">
+            </div>
+            <p>
+                For the museum's location, I chose the museum of Beeld and Geluid in hilversum. I chose this place because it is a museum that is dedicated to the dutch media and has a lot of interesting exhibitions. The museum is also located in a beautiful building and has a lot of space for the artworks to be displayed. The museum is also located in a central location in the Netherlands and is easy to reach by public transport.
+            </p>
+        </div>
+        <div class="right-center background-square">
+            <strong>Name: </strong>Museum Beeld en Geluid <br>
+            <strong>City: </strong>Hilversum <br>
+            <strong>Street: </strong>Media Parkboulevard 1 <br>
+    
+        </div>
+    </div>
+
+{% endblock %}

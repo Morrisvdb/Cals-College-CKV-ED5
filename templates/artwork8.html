@@ -1,0 +1,27 @@
+{% extends 'artworkBase.html' %}
+
+{% block workTitle %}Rickroll{% endblock %}
+{% block artist %}Rick Astley{% endblock %}
+{% block year %}1987{% endblock %}
+{% block dicipline %}Music{% endblock %}
+{% block image %}
+
+    <div class="image-container">
+        <img alt="Image" width="90%" id="image" style="display:none;" series-id="8" onclick="openFullscreen();">
+        <iframe width="60%" height="500"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1">
+        </iframe>
+    </div>
+
+{% endblock %}
+{% block header %}Rickroll{% endblock %}
+{% block description %}
+    The term 'rickrolling' refers to the act of tricking someone into watching the music video for Rick Astley's 1987 hit song "Never Gonna Give You Up". The prank became popular in 2007 and involves sending someone a hyperlink that claims to be something else, but actually redirects the viewer to the music video. The video has since become an internet meme and is often used as a humorous way to surprise or annoy someone. The song's catchy chorus and Astley's distinctive dance moves have made it a beloved part of internet culture.
+    <br>
+
+    <h3>Why?</h3>
+    The internet is a place where people can share their creations and ideas and the rickroll is a perfect example for this. The rickroll is a fun and harmless prank that has become a part of internet culture. The song itself is catchy and the music video is entertaining, making it a popular choice for pranks. The rickroll is a reminder of the creativity and humor that can be found on the internet.
+    
+    <script src="{{ url_for('static', filename='javatari.js') }}"></script>
+{% endblock %}
+

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <div class="right-center background-square">
+        <p>
+            Title: {{ artwork.title }} <br>
+            Artist: {{ artwork.artist }} <br>
+            Year: {{ artwork.year }}
+        </p>
+    </div>
+
+    <div class="center">
+        <h1>{{ artwork.title }}</h1>
+        {% if artwork.id != 0 %}
+            <img src="{{ url_for('static', filename='images/' + artwork.id|string + '.jpg') }}" alt="Image">
+        {% else %}
+            <img src="{{ url_for('static', filename='images/sample.png') }}" alt="Image">
+        {% endif %}
+        <div class="center">
+            <p class="half-width">{{ artwork.text|markdown_to_html }}</p>
+        </div>
+        <br>
+        <div class="center">
+        {% if artworks|length > artwork.id %}
+            <a href="{{ url_for('artwork_display', id=artwork.id+1)}}">
+                <button class="button" onclick="nextArtwork()" data-artwork-id="{{ artwork.id }}" id="nextArtworkButton"><i class="fa-solid fa-forward"></i>Next</button>
+            </a>
+        {% else %}
+            <a href="{{ url_for('completion')}}">
+                <button class="button" onclick="nextArtwork()" data-artwork-id="{{ artwork.id }}" id="nextArtworkButton"><i class="fa-solid fa-forward"></i>Done</button>
+            </a>
+        {% endif %}
+        </div>
+
+       
+        
+    </div>
+
+{% endblock %}

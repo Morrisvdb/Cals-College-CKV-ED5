@@ -1,0 +1,33 @@
+{% extends 'artworkBase.html' %}
+{% set has_demo = true %}
+{% block workTitle %}The Map of the Internet{% endblock %}
+{% block artist %}
+Daniel Galper
+Vasiliy Pugovkin
+Leonid Lilo 
+Vitaliy Zuzin
+{% endblock %}
+{% block year %}2012{% endblock %}
+{% block dicipline %}Visual Art{% endblock %}
+{% block image %}
+
+    <div class="image-container">
+        <img alt="Image" width="90%" id="image" style="display:inline;" series-id="10" onclick="openFullscreen();">
+    </div>
+
+    <div id="demo" class="demo" style="display:none;">
+        <iframe src="http://internet-map.net" frameborder="0" width="900" height="800px"></iframe>
+    </div>
+
+{% endblock %}
+{% block header %}The Map of the Internet{% endblock %}
+{% block description %}
+    This is a visual representation of the entire internet, created by artists Daniel Galper, Vasiliy Pugovkin, Leonid Lilo, and Vitaliy Zuzin in 2012. The map is a complex and intricate design that shows the connections between different websites, domains, and IP addresses. The map is color-coded to represent different types of websites and networks, and includes labels and annotations to help viewers navigate the vast landscape of the internet. The map is a fascinating and detailed look at the structure of the internet and the relationships between different online entities.
+    <br>
+    
+    <h3>Why?</h3>
+    This map is a great show of how large and various the internet is. It is a great piece of visual art that shows the complexity and interconnectedness of the internet. The map is a reminder of the vastness and diversity of the online world, and the importance of understanding the structure and organization of the internet. The map is also a great example of how technology can be used to create beautiful and informative works of art.
+
+    <script src="{{ url_for('static', filename='javatari.js') }}"></script>
+{% endblock %}
+

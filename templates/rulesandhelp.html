@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% set active_page = 'rulesandhelp' %}
+
+{% block title %}Rules and Help{% endblock %}
+
+{% block body %}
+
+<div>
+    <div class="center">
+        <h1>Rules and Help</h1>
+        <div id="sampleArtwork" style="display:none;">
+            <div class="right-center background-square" id="details">
+                <p>
+                    <strong>Title: </strong>The Title<br>
+                    <strong>Artist: </strong>The Artist<br>
+                    <strong>Year: </strong>The year<br>
+                    <strong>Dicipline: </strong>The Art dicipline
+                </p>
+            </div>
+            <div class="center half-width">
+                <button class="dim-button" id="prevButtonT">Previous</button> <br>
+                <img src="{{ url_for('static', filename='images/0/1.png')}}" alt="Image" id="image"> <br>
+                <button class="dim-button" id="nextButtonT">Next</button>
+                <div>
+                    <p>
+                        This is a description
+                    </p>
+                </div>
+                <button class="dim-button" id="demoButton">Load Demo</button> <br>
+                <button class="dim-button" onclick="" id="nextArtworkButton"><i class="fa-solid fa-forward"></i> Next</button>
+            </div>
+        </div>
+
+        <p id="tutorialtext">
+            Hi there, the tour is soon to start but first I will explain how this website works and how to use it.
+        </p>
+        <button onclick="nextTutorialStep()" id="tutorialbutton">Sounds good!</button>
+    </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'artworkBase.html' %}
+{% set  has_demo = true %}
+
+{% block workTitle %}Dag Hammarskjold (ASCII Art){% endblock %}
+{% block artist %}Unknown{% endblock %}
+{% block year %}1961{% endblock %}
+{% block dicipline %}Visual Art{% endblock %}
+{% block image %}
+    <img
+    src="{{ url_for('static', filename='images/2/1.png') }}"
+    alt="Image" 
+    id="image" 
+    style="width:40%; display:inline;" 
+    onclick="openFullscreen();" 
+    series-id="2" 
+    >
+
+    <div id="demo" style="display:none">
+        <form
+        id="inputform"
+        hx-post="/ascii/save"
+        hx-trigger="submit"
+        hx-target="#display"
+        hx-swap="innerHTML"
+        hx-on:submit-success="document.getElementById('line').value='';"
+        >
+            <input type="text" name="line" id='line' autocomplete="off" placeholder="Type here...."> <br>
+            <button type="submit">Send</button>
+            
+        </form>
+        <p>TIP: Click on a line to delete it</p>
+
+        <div class="output asciiArt">
+            <div id="display" hx-get="/ascii/load" hx-trigger="load"></div>
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block header %}2. Dag Hammarskjold (ASCII Art){% endblock %}
+{% block description %}
+Here you see an old form of visual art named 'ASCII art'. When making ASCII art, the artist uses the characters on the keyboard to create an image. This form of art was very popular in the early days of the internet, when images were hard to share. The image you see here was made in the early days of the internet and was actually made using a typewriter.
+<br>
+<h3>Why?</h3>
+I found this artwork to be suitable for the museum because it is a very interesting form of art that is not seen very often anymore. The artwork is also a good example of how art can be made using different techniques and materials.
+
+
+
+<script src="{{ url_for('static', filename='asciiArt.js') }}"></script>
+{% endblock %}

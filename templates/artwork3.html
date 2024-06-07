@@ -1,0 +1,22 @@
+{% extends 'artworkBase.html' %}
+
+{% block workTitle %}Commodore 64{% endblock %}
+{% block artist %}Commodore International{% endblock %}
+{% block year %}1982{% endblock %}
+{% block dicipline %}Design{% endblock %}
+{% block image %}
+    <!-- <button onclick="prevImage()" class="button" id="prevButton">Previous</button> -->
+    <div class="image-container">
+        <img alt="Image" image-id="1" series-id="3" id="image" onclick="openFullscreen();">
+    </div>
+    <!-- <button onclick="nextImage()" class="button" id="nextButton">Next</button> -->
+{% endblock %}
+{% block header %}Commodore 64{% endblock %}
+{% block description %}
+    Above you can see a picture of the Commodore 64. This is an 8 bit computer first produced in 1982. It holds the Guinness World record for most units ever sold with a rivoting <strong>17 Milion</strong> units sold.
+    It's name stems from the amount of RAM it had available to it, 64 Kilobytes. The Commodore 64 was a very popular computer in the 80's and was used for a variety of tasks such as gaming, programming and even music production.
+
+    <br>
+    <h3>Why?</h3>
+    I found this artwork to be suitable for the museum because it is a very important part of the history of computing. And has layed the foundation for commercial home computers.
+{% endblock %}

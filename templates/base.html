@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://kit.fontawesome.com/832e141ab8.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.6.1"></script>
+</head>
+
+
+<title>{% block title %}{% endblock %}</title>
+
+
+<body class="theme-light theme-dark">
+    <canvas id="overlayCanvas"></canvas>
+    <div class="navbar" id="navbar">
+        <a href="{{ url_for('home') }}" class="{% if active_page == 'home' %}active{% endif %}">Home</a>
+        <div id="unlockedArtworks"></div>
+        <button id="themebutton" onclick="themeButtonCallback()" class=""><i id="themebutton-icon" class="fa-regular fa-moon"></i></button>
+        <a id="resetButton" onclick="resetProgress();" class="">Reset Progress</a>
+        
+    </div>
+
+
+
+    {% block body %}{% endblock %}
+    <script src="{{ url_for('static', filename='onLoad.js') }}"></script>
+    <script src="{{ url_for('static', filename='themeButtonCallback.js') }}"></script>
+    <script src="{{ url_for('static', filename='nextTutorialStep.js') }}"></script>
+    <script src="{{ url_for('static', filename='loadDemo.js')}}"></script>
+    <script src="{{ url_for('static', filename='saveProgress.js') }}"></script>
+
+</body>

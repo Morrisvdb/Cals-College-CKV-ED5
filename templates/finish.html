@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="center">
+        <h1>That's it</h1>
+        <p>
+            Congratulations, you have completed the flash course on the internet. I hope you enjoyed it and that I might see you again in the future.
+            <br>
+            If you have any points regarding the design and interface of the webpage, please let me know, I am always looking to improve.
+        
+        </p>
+        <div>
+            <p>Lets get you back home!</p>
+            <a href="{{ url_for('home') }}" class="button">Let's Go!</a>
+        </div>
+    </div>
+{% endblock %}

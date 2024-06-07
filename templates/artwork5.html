@@ -1,0 +1,78 @@
+{% extends 'artworkBase.html' %}
+{% set has_demo = true %}
+{% block workTitle %}Atari 2600{% endblock %}
+{% block artist %}Atari{% endblock %}
+{% block year %}1977{% endblock %}
+{% block dicipline %}Industrial Design{% endblock %}
+{% block image %}
+
+    <div class="image-container">
+        <img alt="Image" width="90%" id="image" style="display:inline;" series-id="5" onclick="openFullscreen();">
+    </div>
+
+    <div id="demo" style="display:none;" class="center">
+        <div id="javatari" style="width: 800px; height:600px;">
+            <div id="javatari-screen" style="box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 10px; margin-bottom: 137px;" tabindex="-1">
+                <div id="jt-screen-fs" tabindex="0">
+                    <div id="jt-screen-fs-center" tabindex="-1">
+                        <div id="jt-screen-canvas-outer">
+                            <canvas id="jt-screen-canvas" tabindex="-1" width="320" height="446" style="width: 640px; height: 446px;"></canvas>
+                            <div id="jt-unmute-message" class="" style="transform: translate(-50%) scale(1);"></div>
+                            <div id="jt-logo" class="jt-show">
+                                <div id="jt-logo-center" style="transform: translate(-50%, -50%);">
+                                    <div id="jt-logo-message"> <div id="jt-logo-message-text"></div>
+                                    <div id="jt-logo-message-ok"> <div id="jt-logo-message-ok-text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="jt-osd"></div>
+                </div> <div id="jt-bar" style="width: 100%;" class="">
+                    <div id="jt-bar-inner">
+                        <div id="jt-bar-power" class="jt-bar-button" style="background-position: -5px -26px;" title="System Power"></div>
+                        <div id="jt-bar-netplay" class="jt-bar-button jt-hidden" style="background-position: -192px -1px;" title="NetPlay!"></div>
+                        <div id="jt-bar-settings" class="jt-bar-button" style="background-position: -33px -26px;" title="Settings"></div>
+                        <div id="jt-bar-select" class="jt-bar-button" style="background-position: -78px -51px;" title="Game Select"></div>
+                        <div id="jt-bar-reset" class="jt-bar-button" style="background-position: -33px -51px;" title="Game Reset"></div>
+                        <div id="jt-bar-full-screen" class="jt-bar-button" style="background-position: -103px -1px;" title="Full Screen"></div>
+                        <div id="jt-bar-scale-plus" class="jt-bar-button jt-full-screen-hidden" style="background-position: -80px -1px;" title="Increase Screen"></div>
+                        <div id="jt-bar-scale-minus" class="jt-bar-button jt-full-screen-hidden" style="background-position: -58px -1px;" title="Decrease Screen"></div>
+                        <div id="jt-bar-console-panel" class="jt-bar-button jt-full-screen-only" style="background-position: -61px -25px;" title="Toggle Console Panel"></div>
+                        <div id="jt-bar-logo" class="jt-bar-button jt-full-screen-hidden" style="background-position: -99px -26px;" title="About Javatari"></div>
+                    </div>
+                </div>
+                <div id="jt-console-panel" class="jt-console-panel" tabindex="-1" style="transform: translateX(-50%);">
+                    <div id="jt-console-panel-p0-diff-label" class="jt-console-panel-p0-diff-label jt-console-panel-icon"></div>
+                    <div id="jt-console-panel-p1-diff-label" class="jt-console-panel-p1-diff-label jt-console-panel-icon"></div>
+                    <div id="jt-console-panel-power-labels" class="jt-console-panel-power-labels jt-console-panel-icon"></div>
+                    <div id="jt-console-panel-reset-labels" class="jt-console-panel-reset-labels jt-console-panel-icon"></div>
+                    <div id="jt-console-panel-power" class="jt-console-panel-power jt-console-panel-lever" style="opacity: 1;"></div>
+                    <div id="jt-console-panel-color" class="jt-console-panel-color jt-console-panel-lever" style="opacity: 0;"></div>
+                    <div id="jt-console-panel-select" class="jt-console-panel-select jt-console-panel-lever" style="opacity: 0;"></div>
+                    <div id="jt-console-panel-reset" class="jt-console-panel-reset jt-console-panel-lever" style="opacity: 0;"></div>
+                    <div id="jt-console-panel-p0-diff" class="jt-console-panel-p0-diff jt-console-panel-switch" style="opacity: 0;"></div>
+                    <div id="jt-console-panel-p1-diff" class="jt-console-panel-p1-diff jt-console-panel-switch" style="opacity: 0;"></div>
+                    <div id="jt-console-panel-cart-image" class="jt-console-panel-cart-image" style="opacity: 0;"></div>
+                    <div id="jt-console-panel-cart-load" class="jt-console-panel-cart-load"></div>
+                    <div id="jt-console-panel-cart-file" class="jt-console-panel-cart-file jt-console-panel-icon"></div>
+                    <div id="jt-console-panel-cart-url" class="jt-console-panel-cart-url jt-console-panel-icon"></div>
+                    <div id="jt-console-panel-cart-label" class="jt-console-panel-cart-label" style="opacity: 0; color: rgb(250, 37, 37); background: rgb(16, 16, 16); border-color: transparent;">JAVATARI</div>
+                </div>
+                <div id="jt-recent-roms" class="jt-select-dialog" style="width: 350px; height: 108px; transform: translateY(-14px) scale(1);" tabindex="-1">Select Cartridge<ul style="width: 85%;"><li style="text-align: center;" class="jt-visible jt-toggle jt-toggle-checked jt-selected">PAC-MAN</li><li style="text-align: center;" class="jt-visible">&nbsp;&nbsp;Open ROM File...</li><li style="text-align: center;">&nbsp;&nbsp;Open ROM File...</li><li style="text-align: center;">&nbsp;&nbsp;Open ROM File...</li><li style="text-align: center;">&nbsp;&nbsp;Open ROM File...</li><li style="text-align: center;">&nbsp;&nbsp;Open ROM File...</li><li style="text-align: center;">&nbsp;&nbsp;Open ROM File...</li><li style="text-align: center;">&nbsp;&nbsp;Open ROM File...</li><li style="text-align: center;">&nbsp;&nbsp;Open ROM File...</li><li style="text-align: center;">&nbsp;&nbsp;Open ROM File...</li><li style="text-align: center;">&nbsp;&nbsp;Open ROM File...</li></ul></div></div> <div id="jt-screen-scroll-message"> Swipe up/down on the Screen <br>to hide the browser bars! </div> </div></div>
+            
+        </div>
+        <h2>Click the window and press F12 to start</h2>
+    </div>
+    
+{% endblock %}
+{% block header %}Atari 2600{% endblock %}
+{% block description %}
+    The Atari 2600 was a game console developed by Arati, and released in 1977. It was one of the first popular home video game consoles, and helped to establish the video game industry as a major form of entertainment. The Atari 2600 was a huge success, and is credited with popularizing the use of microprocessor-based hardware and ROM cartridges for storing game software. The console was also the first to use a joystick with a single button, which became a standard controller design for many years. The Atari 2600 was a major milestone in the history of video games, and helped to pave the way for the modern gaming industry.
+    <br>
+
+    <h3>Why?</h3>
+    I found the Atari 2600 to fit this museum because it marked the ending of an era of gaming. The Atari 2600 was the first console to use ROM cartridges, which allowed for a wide variety of games to be played on a single console. The console was also the first to use a joystick with a single button, which became a standard controller design for many years. The Atari 2600 was a major milestone in the history of video games, and helped to pave the way for the modern gaming industry.
+    
+    <script src="{{ url_for('static', filename='javatari.js') }}"></script>
+{% endblock %}
+

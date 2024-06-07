@@ -1,0 +1,251 @@
+:root {
+    --primary-color: #45a049;
+    --secondary-color: #1f4b23;
+    --highlight-color: #7070ff;
+    --dim-color: #5da0606e;
+    --alert-color: #ff7070;
+    --light-color: #f0f0f0;
+    --dark-color: #333;
+
+}
+
+.theme-light {
+    background-color: var(--light-color);
+    color: black;
+    font-family: sans-serif, arial;
+}
+
+.theme-light a {
+    color: black;
+}
+
+.theme-dark {
+    background-color: var(--dark-color);
+    color: white;
+}
+
+.theme-dark a {
+    color: white;
+}
+
+title {
+    font-family: sans-serif, arial;
+}
+
+/* navbar */
+    .navbar {
+        overflow: hidden;
+        background-color: var(--primary-color);
+        border-radius: 8px;
+    }
+
+    .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: larger;
+    }
+
+    .navbar a:hover {
+        background-color: var(--secondary-color);
+        color: white;
+    }
+
+    .navbar_right {
+        overflow: hidden;
+        background-color: grey;
+    }
+
+    .navbar_right a {
+        float: right;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: larger;
+    }
+
+    .navbar_right a:hover {
+        background-color: var(--secondary-color);
+        color: white;
+    }
+
+    .navbar button {
+        float: right;
+        display: block;
+        color: white;
+        text-align: center;
+        /* padding: 14px 16px; */
+        padding: 5px 16px;
+        text-decoration: none;
+        font-size: larger;
+        background-color: var(--primary-color);
+        border: none;
+        border-radius: 8px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+.active_page {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.center {
+    text-align: center;
+}
+
+.top_right {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+button {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.button {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#themebutton {
+    /* background-color: var(--primary-color); */
+    background-color: #1f4b23;
+    border: none;
+    color: white;
+    /* padding: 15px 32px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 5px;
+    cursor: pointer;
+    border-radius: 8px;   
+}
+
+#themebutton:hover {
+    background-color: var(--primary-color);
+}
+
+#themebutton_dark {
+    background-color: var(--secondary-color);
+}
+
+#tutorialbutton {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+
+}
+
+#overlayCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* This allows clicks to pass through the canvas to the elements below */
+    z-index: 9999; /* This ensures the canvas is above all other elements */
+}
+
+.right-center {
+    position: absolute;
+    top: 30%;
+    right: 20px;
+    width: 15%;
+    transform: translate(0, -50%);
+}
+
+.background-square {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 5px 5px 5px var(--primary-color);
+}
+
+.half-width {
+    width: 60%;
+    margin: auto;
+}
+
+/* #image {
+    display:block;
+} */
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    padding: 0px;
+    margin: 0px;
+}
+
+#image {
+    width: 60%;  /* Adjust as needed */
+    height: 60%; /* Adjust as needed */
+    object-fit: contain;
+}
+
+.dim-button {
+    background-color: var(--dim-color);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+input {
+    border-radius: 8px;
+    padding: 7px;
+    margin: 5px;
+    background-color: var(--light-color);
+}
+
+.asciiArt a {
+    text-decoration: none;
+}
+
+.asciiArt a:hover {
+    text-decoration: underline;
+}

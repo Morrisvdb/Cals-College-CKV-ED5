@@ -1,0 +1,30 @@
+{% extends 'artworkBase.html' %}
+{% set has_demo = true %}
+{% block workTitle %}ARPANET{% endblock %}
+{% block artist %}Bolt, Beranek and Newman{% endblock %}
+{% block year %}1971{% endblock %}
+{% block dicipline %}Architecture{% endblock %}
+{% block image %}
+    <div class="image-container">
+        <img alt="Image" width="90%" id="image" style="display:inline;" onclick="openFullscreen();">
+    </div>
+
+    <div id="demo" style="display: none;">
+        <iframe src="https://www.arpanet.app/" frameborder="0" height="600px" width="100%"></iframe>
+
+    </div>
+
+{% endblock %}
+
+{% block header %}1. ARPANET{% endblock %}
+{% block description %}
+    Above you can see an image oof ARPANET. This was the firstmost version of the internet and connected a few computers across the USA with oneanother. 
+    The ARPANET was the first packet-switching network and the first network to implement the TCP/IP protocol suite. Both technologies became the technical foundation of the Internet.
+    The ARPANET was established by the Advanced Research Projects Agency (ARPA) of the United States Department of Defense.
+    The packet-switching technology used in the ARPANET was based on concepts and designs by British scientist Donald Davies and American Paul Baran.
+    <br>
+
+    <h3>Why?</h3>
+    I found this artwork to be suitable for the museum because it is the first version of the internet and is a very important part of the history of the internet.
+    <br>
+    {% endblock %}

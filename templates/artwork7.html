@@ -1,0 +1,32 @@
+{% extends 'artworkBase.html' %}
+{% set has_demo = true %}
+
+
+{% block workTitle %}Ping Pong Virus{% endblock %}
+{% block artist %}Unknown{% endblock %}
+{% block year %}1988{% endblock %}
+{% block dicipline %}Software Design{% endblock %}
+{% block image %}
+
+    <div class="image-container">
+        <img alt="Image" width="90%" id="image" style="display:inline;" series-id="7" onclick="openFullscreen();">
+    </div>
+
+    <div class="demo" id="demo" style="display: none;">
+        <iframe src="https://www.youtube.com/embed/-XYgaJZOer8?mute=1" frameborder="0" width="60%" height="500px">
+
+        </iframe>
+    </div>
+
+{% endblock %}
+{% block header %}Ping Pong Virus{% endblock %}
+{% block description %}
+    The ping-pong virus was a virus created in 1988 by a student at the University of Santiago de Compostela, Spain. The virus was designed to spread through floppy disks and infect the MS-DOS operating system. The virus was unique in that it did not cause any harm to the infected computer, but instead displayed a message on the screen that read "Ping Pong". The virus was not intended to cause any damage, but was created as a demonstration of the student's programming skills. The virus was eventually discovered and removed by antivirus software, but it remains one of the most well-known viruses in computer history.
+    <br>
+    
+    <h3>Why?</h3>
+    The ping pong virus was the first real modern virus and was a visually interesting piece of software. The virus was not created with malicious intent, but was instead a demonstration of the student's programming skills. The virus was unique in that it did not cause any harm to the infected computer, but instead displayed a message on the screen. The ping pong virus is a reminder of the importance of computer security and the need to protect our computer systems from malicious software.
+
+    <script src="{{ url_for('static', filename='javatari.js') }}"></script>
+{% endblock %}
+

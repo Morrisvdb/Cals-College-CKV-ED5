@@ -1,0 +1,24 @@
+{% extends 'artworkBase.html' %}
+
+{% block workTitle %}The Binary Cafe{% endblock %}
+{% block artist %}Steve Bernhardson{% endblock %}
+{% block year %}1994{% endblock %}
+{% block dicipline %}Architecture{% endblock %}
+{% block image %}
+
+    <div class="image-container">
+        <img alt="Image" width="90%" id="image" style="display:inline;" series-id="9" onclick="openFullscreen();">
+    </div>
+
+{% endblock %}
+{% block header %}The Binary Cafe{% endblock %}
+{% block description %}
+    The binary cafe was a cafe in Toronto, Canada that was one of the first internet cafes in the world. The cafe opened in 1994 and was a popular spot for computer enthusiasts and early internet users. The cafe was known for its cutting-edge technology, including high-speed internet access, virtual reality games, and computer workstations. The binary cafe was a hub for the emerging digital culture of the 1990s and was a gathering place for artists, hackers, and tech enthusiasts. The cafe closed in 2001, but its legacy lives on as one of the pioneers of internet culture.
+    <br>
+    
+    <h3>Why?</h3>
+    The binary cafe was a groundbreaking piece of architecture that was ahead of its time. The cafe was one of the first internet cafes in the world and was a hub for the emerging digital culture of the 1990s. The cafe was known for its cutting-edge technology and was a gathering place for artists, hackers, and tech enthusiasts. The binary cafe was a pioneer of internet culture and helped to shape the way we interact with technology today.
+
+    <script src="{{ url_for('static', filename='javatari.js') }}"></script>
+{% endblock %}
+

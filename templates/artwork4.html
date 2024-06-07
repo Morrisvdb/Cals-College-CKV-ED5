@@ -1,0 +1,30 @@
+{% extends 'artworkBase.html' %}
+{% set has_demo = true %}
+{% block workTitle %}Windows 95{% endblock %}
+{% block artist %}Microsoft{% endblock %}
+{% block year %}1995{% endblock %}
+{% block dicipline %}Interactive Design{% endblock %}
+{% block image %}
+
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='images/4/1.png') }}" alt="Image" width="90%" id="image" style="display:inline;" series-id="4" onclick="openFullscreen();">
+    </div>
+
+
+    <div class="demo" id="demo" style="display: none;">
+        <iframe
+        id="demo"
+        scrolling="no"
+        src="https://copy.sh/v86/?profile=windows95"
+        style="border: 0px none; height: 860px;width: 1044px;"
+        ></iframe>
+        <h3>Click on the window to take controll of the cursor, press esc to exit.</h3>
+    </div>
+{% endblock %}
+{% block header %}Windows 95{% endblock %}
+{% block description %}
+    Windows 95 was a major release of the Microsoft Windows operating system and was released on August 24, 1995. It was a significant improvement over the company's previous operating system, Windows 3.1. Windows 95 introduced a completely new user interface, including the taskbar and Start menu, and added support for 32-bit applications. It also included built-in support for networking and the Internet, making it easier for users to connect to the World Wide Web. Windows 95 was a huge success for Microsoft and helped to establish the company as a dominant force in the technology industry.
+    <br>
+    <h3>Why?</h3>
+    I chose to include Windows 95 in the museum because it was a groundbreaking operating system that had a major impact on the computer industry. It introduced many features that are still in use today, such as the taskbar and Start menu, and helped to popularize the use of personal computers in homes and businesses around the world. I also personally love the asthetics of the operating system and think it is a great example of interactive design.
+{% endblock %}
