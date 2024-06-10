@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 
-<head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
-    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <script src="https://kit.fontawesome.com/832e141ab8.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://unpkg.com/htmx.org@1.6.1"></script>
-</head>
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+<script src="https://kit.fontawesome.com/832e141ab8.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://unpkg.com/htmx.org@1.6.1"></script>
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
 
 
 <title>{% block title %}{% endblock %}</title>
@@ -21,8 +20,6 @@
         <a id="resetButton" onclick="resetProgress();" class="">Reset Progress</a>
         
     </div>
-
-
 
     {% block body %}{% endblock %}
     <script src="{{ url_for('static', filename='onLoad.js') }}"></script>

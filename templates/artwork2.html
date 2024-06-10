@@ -14,25 +14,13 @@
     onclick="openFullscreen();" 
     series-id="2" 
     >
+    
+    <div id="demo" style="display:none;">
+        <input type="text" name="input" id="input">
+        <button onclick="addArt();">Add</button>
+        <button onclick="clearArt();">Clear</button>
 
-    <div id="demo" style="display:none">
-        <form
-        id="inputform"
-        hx-post="/ascii/save"
-        hx-trigger="submit"
-        hx-target="#display"
-        hx-swap="innerHTML"
-        hx-on:submit-success="document.getElementById('line').value='';"
-        >
-            <input type="text" name="line" id='line' autocomplete="off" placeholder="Type here...."> <br>
-            <button type="submit">Send</button>
-            
-        </form>
-        <p>TIP: Click on a line to delete it</p>
-
-        <div class="output asciiArt">
-            <div id="display" hx-get="/ascii/load" hx-trigger="load"></div>
-        </div>
+        <div id="output" class="asciiArt"></div>
     </div>
 
 

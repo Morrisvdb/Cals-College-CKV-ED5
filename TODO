@@ -1,0 +1,6 @@
+1: Add more information
+2: Add more Images
+3: Add more images of os etc.
+4. Add more images and sound
+
+openssl req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem 

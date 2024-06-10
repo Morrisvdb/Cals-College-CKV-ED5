@@ -1,47 +1,49 @@
-window.onload = generateAsciiArt(true); 
+window.onload = updateOutput();
 
-function generateAsciiArt(load=false) {
-    var input = document.getElementById("inputText").value;
-    var output = document.getElementById("asciiArt");
-
-    current_art = document.cookie.split(';').find(cookie => cookie.includes("current_art"));
-    if (current_art) {
-        current_art = current_art.split('=')[1];
+function addArt() {
+    console.log("Adding art");
+    var art = document.getElementById('input').value;
+    let artCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('art='));
+    if (artCookie == undefined) {
+        artCookie = "";
     } else {
-        current_art = "";
+        artCookie = artCookie.split('=')[1]
     }
-
-    if (!load) {
-        current_art += "<br>" + input;
-    }
-    document.cookie = "current_art=" + current_art;
-    outHTML = "";
-    
-    for (var i = 0; i < current_art.split("<br>").length; i++){
-        outHTML += "<a href='#' onclick='deleteLine(" + i + ")'>" + current_art.split('<br>')[i] + "</a><br>";
-    }
-
-    output.innerHTML = outHTML;
+    artCookie += art;
+    document.cookie = "art=" + artCookie + "<br>" + "; path=/;";
+    console.log(document.cookie);
+    updateOutput();
 }
 
-function deleteLine(index) {
-    var output = document.getElementById("asciiArt");
-    var current_art = document.cookie.split(';').find(cookie => cookie.includes("current_art")).split('=')[1];
-    var lines = current_art.split("<br>");
-
-    lines.splice(index, 1);
-    current_art = lines.join("<br>");
-    document.cookie = "current_art=" + current_art;
-    outHTML = "";
-
-    for (var i = 0; i < lines.length; i++){
-        outHTML += "<a href='#' onclick='deleteLine(" + i + ")'>" + lines[i] + "</a><br>";
+function clearArt(line_nr = null) {
+    if (line_nr == null) {
+        document.cookie = "art=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    } else {
+        let artCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('art='));
+        if (artCookie == undefined) {
+            artCookie = "";
+        } else {
+            artCookie = artCookie.split('=')[1]
+        }
+        let lines = artCookie.split("<br>");
+        lines.splice(line_nr, 1);
+        document.cookie = "art=" + lines.join("<br>") + "; path=/;";
     }
-
-    output.innerHTML = outHTML;
+    updateOutput();
 }
 
-function clearAsciiArt() {
-    document.cookie = "current_art=";
-    document.getElementById("asciiArt").innerHTML = "";
+function updateOutput() {
+    let artCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('art='));
+    if (artCookie == undefined) {
+        artCookie = "";
+    } else {
+        artCookie = artCookie.split('=')[1]
+    }
+    console.log(artCookie)
+    art = "";
+    for (let i = 0; i < artCookie.split("<br>").length; i++) {
+        art += "<a href='#' onclick='clearArt(" + i + ")'>" + artCookie.split("<br>")[i] + "</a><br>";
+    }
+
+    document.getElementById('output').innerHTML = art;
 }

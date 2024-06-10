@@ -6,6 +6,7 @@ Flask-Bcrypt==1.0.1
 Flask-JSGlue==0.3.1
 Flask-Login==0.6.3
 Flask-SQLAlchemy==3.1.1
+flask-talisman==1.1.0
 greenlet==3.0.3
 itsdangerous==2.2.0
 Jinja2==3.1.4

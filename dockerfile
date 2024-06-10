@@ -2,11 +2,9 @@ FROM faucet/python3
 
 WORKDIR /app
 
-COPY . /app
-
 EXPOSE 5000
 
-VOLUME [ "/data" ]
+COPY . /app
 
 RUN pip install -r requirements.txt
 
